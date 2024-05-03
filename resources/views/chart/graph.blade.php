@@ -65,7 +65,7 @@
     <title>User Registrations Chart</title>
 </head>
 <body>
-    <h1>Monthly User Registrations</h1>
+    <h1>Total Number of Vehicles</h1>
     <div style="width:75%;">
         {!! $chart->render() !!}
     </div>
