@@ -71,7 +71,7 @@ class ChartController extends Controller
                 'plugins' => [
                     'title' => [
                         'display' => true,
-                        'text' => 'Monthly User Registrations'
+                        'text' => 'Total Number of Vehicles'
                     ]
                 ]
             ]);
