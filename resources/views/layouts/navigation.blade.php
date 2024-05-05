@@ -22,11 +22,20 @@
                     </x-nav-link>
                 </div>
 
+                @if (auth()->user()->role == "driver")
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
                     <x-nav-link :href="route('vehicle.index')" :active="request()->routeIs('vehicle.index')">
                         {{ __('Vehicles') }}
                     </x-nav-link>
                 </div>
+                    {{-- {{ auth()->user()->name }} --}}
+                @endif
+
+                {{-- <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                    <x-nav-link :href="route('vehicle.index')" :active="request()->routeIs('vehicle.index')">
+                        {{ __('Vehicles') }}
+                    </x-nav-link>
+                </div> --}}
 
                 {{-- <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
                     <x-nav-link :href="route('user.index')" :active="request()->routeIs('user.driverindex')">

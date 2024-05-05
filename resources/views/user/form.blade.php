@@ -30,6 +30,12 @@
                             <x-input-error class="mt-2" :messages="$errors->get('email')" />
                         </div>
 
+                        <div class="text-gray-900">
+                            <x-input-label2 class="text-gray-900" for="password" value="Password" />
+                            <x-text-input id="password" name="password" type="password" class="mt-1 block w-full" :value="$user->password ?? old('password')" required autofocus />
+                            <x-input-error class="mt-2" :messages="$errors->get('password')" />
+                        </div>
+
                         {{-- <div class="text-gray-900">
                             <x-input-label2 class="text-gray-900" for="password" value="password" />
                             <x-text-input id="password" name="password" type="password" class="mt-1 block w-full" :value="$user->password " required autofocus />

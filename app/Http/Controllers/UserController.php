@@ -6,6 +6,8 @@ use App\Models\User;
 use Illuminate\Http\Response;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+
 
 class UserController extends Controller
 {
@@ -14,6 +16,14 @@ class UserController extends Controller
      */
     public function index()
     {
+        $user = Auth::user();
+
+        if ($user->role == "user") {
+            return response()->view('user2.index', [
+                'users' => User::orderBy('updated_at', 'desc')->get(),
+            ]);
+        }
+        
         return response()->view('user.index', [
             'users' => User::orderBy('updated_at', 'desc')->get(),
         ]);
